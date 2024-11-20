@@ -1,0 +1,198 @@
+@import url("https://fonts.googleapis.com/css2?family=Kavoon&display=swap");
+
+body {
+  background-color: #f5f5f5;
+}
+
+body.dark-mode {
+  background-color: #333;
+  color: #fff;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #d7ffb9;
+  color: black;
+  padding: 1rem 0; /* Keeps padding consistent */
+  height: 8vh;
+  display: flex;
+  justify-content: center; /* Centers title-container */
+  align-items: center;
+  z-index: 1000;
+}
+
+.title-container {
+  text-align: center;
+}
+
+.header-title {
+  color: #d00000;
+  font-family: "Kavoon", sans-serif;
+  font-weight: 400;
+  margin: 0;
+}
+
+.slogan-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: absolute;
+  left: 1rem;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.slogan-title {
+  font-family: "Lobster", cursive;
+  font-size: 1.5rem; /* Adjust size as needed */
+  font-weight: bold;
+  color: #d00000; /* Ensure good contrast */
+}
+
+.slogan-icon {
+  font-size: 1.5rem;
+  color: #d00000;
+}
+
+.header-actions {
+  display: flex; /* Arrange items horizontally */
+  align-items: center; /* Vertically center items */
+  justify-content: flex-end; /* Push items to the right */
+  position: absolute;
+  right: 1rem; /* Adjust horizontal position */
+}
+
+/* Toggle switch container */
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  margin-right: 8rem; /* Adjust spacing from Log Out button */
+}
+
+/* Hide the default checkbox */
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.sun-icon,
+.moon-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 12px;
+  transition: 0.4s;
+}
+
+.sun-icon {
+  right: 5px;
+}
+
+.moon-icon {
+  left: 5px;
+  opacity: 0;
+}
+
+input:checked + .slider .sun-icon {
+  opacity: 0;
+}
+
+input:checked + .slider .moon-icon {
+  opacity: 1;
+}
+
+/* Slider before toggle */
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+/* Slider after toggle */
+input:checked + .slider {
+  background-color: #4caf50; /* Green when active */
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px); /* Moves the slider thumb */
+}
+
+.log-out-btn {
+  position: absolute;
+  right: 1rem; /* Adjusts distance from right edge */
+  background: none;
+  font-family: "Anonymous Pro", monospace;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.log-out-btn:hover {
+  color: #d00000;
+  text-decoration: underline;
+}
+
+.notification {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 1rem 2rem;
+  background-color: #d7ffb9; /* Green background with some transparency */
+  color: #d00000;
+  font-size: 20px;
+  font-family: "Anonymous Pro", monospace;
+  border-radius: 5px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  opacity: 0;
+  animation: fadeInOut 3s ease forwards;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

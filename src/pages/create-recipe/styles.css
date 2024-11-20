@@ -1,0 +1,79 @@
+.container {
+  min-height: 100vh;
+}
+
+.main-content {
+  margin-top: 19vh;
+  font-family: "Anonymous Pro", monospace;
+}
+
+/* Flex container to align sections side by side */
+.content-container {
+  display: flex;
+  padding: 2rem;
+  gap: 2rem; /* Space between left and right sections */
+  align-items: flex-start;
+  height: 70vh;
+}
+
+/* Left and Right sections */
+.left-section,
+.right-section {
+  flex: 1;
+  padding: 1.5rem;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow-y: auto;
+}
+
+/* Labels and inputs */
+.label-category {
+  color: #000;
+  font-weight: bold;
+  font-size: 1.2rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.recipe-image input {
+  width: 80%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: "Anonymous Pro", monospace;
+  font-size: 1rem;
+}
+
+/* Buttons */
+.create-recipe-btn {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-family: "Anonymous Pro", monospace;
+  font-weight: bold;
+}
+
+.create-recipe-btn:hover {
+  background-color: #45a049;
+}
+
+/* Specific button styling for Create Recipe */
+.create-recipe-btn {
+  width: 100%;
+  margin-top: 1.5rem;
+  padding: 1rem;
+}
+
+/* Responsive layout: Stack sections on smaller screens */
+@media (max-width: 768px) {
+  .content-container {
+    flex-direction: column;
+  }
+}

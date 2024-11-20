@@ -1,0 +1,42 @@
+.cuisine-filter-container {
+  position: fixed;
+  top: 11vh;
+  left: 72%;
+  transform: translateX(-50%); /* Centers the container horizontally */
+  display: flex;
+  justify-content: center;
+  width: 21rem;
+  padding: 1rem 0;
+  z-index: 1000;
+}
+
+.cuisine-filter {
+  padding: 0.5rem 2.5rem 0.5rem 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow-y: auto;
+  height: 2.3rem; /* Fixed height */
+  line-height: 2.3rem; /* Align text vertically */
+  width: 9rem;
+}
+
+.filter-button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 0rem 1rem;
+  margin: 0 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  height: 2.3rem; /* Fixed height to match dropdown */
+  line-height: 2.3rem; /* Align text vertically */
+}
+
+@media screen and (max-width: 1400px) {
+  .cuisine-filter-container {
+    left: 60%;
+  }
+}

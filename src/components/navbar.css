@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Kavoon&display=swap");
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #d7ffb9;
+  color: black;
+  margin-top: 12vh;
+  padding: 0.5rem 1rem; /* Adds padding on the sides */
+  height: 5vh;
+  display: flex;
+  justify-content: space-between; /* Separates <ul> and input */
+  align-items: center;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  z-index: 1000;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem; /* Adds spacing between each <li> */
+  margin: 0; /* Removes default margin */
+  padding: 0; /* Removes default padding */
+}
+
+li {
+  cursor: pointer;
+  font-family: "Anonymous Pro", monospace;
+  font-size: 20px;
+  background-color: none;
+  padding: 0.87rem 0.5rem;
+}
+
+li:hover {
+  color: #d00000;
+  text-decoration: underline;
+}
+
+.recipes-link-active,
+.my-recipes-link-active,
+.create-recipe-link-active,
+.favorites-link-active {
+  background-color: #84af64;
+}

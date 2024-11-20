@@ -1,0 +1,30 @@
+.container {
+  min-height: 100vh;
+}
+
+.main-content {
+  margin-top: 19vh;
+}
+
+.recipe-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Creates 3 equal-width columns */
+  gap: 1rem; /* Adds spacing between grid items */
+  padding: 1rem;
+  justify-items: center; /* Centers the items horizontally in each cell */
+}
+
+@media (max-width: 1024px) {
+  .recipe-container {
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); /* 2 columns on medium screens (tablets) */
+  }
+}
+
+@media (max-width: 600px) {
+  .recipe-container {
+    grid-template-columns: 1fr; /* 1 column on small screens (mobile devices) */
+  }
+}

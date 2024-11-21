@@ -86,9 +86,9 @@ export default function CreateRecipe() {
     <div className="container">
       <Header />
       <Navbar />
-      <div className="main-content">
+      <div className="create-recipe-main-content">
         <div className="content-container">
-          <div className="left-section">
+          <div className="create-recipe-left-section">
             <RecipeInformation
               author={author}
               recipeName={recipeName}
@@ -110,7 +110,7 @@ export default function CreateRecipe() {
               addIngredient={addIngredient}
             />
           </div>
-          <div className="right-section">
+          <div className="create-recipe-right-section">
             <Instructions
               instructions={instructions}
               handleInstructionChange={handleInstructionChange}

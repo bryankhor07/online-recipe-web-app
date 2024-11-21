@@ -34,7 +34,7 @@ export default function Favorites() {
     <div className="container">
       <Header />
       <Navbar />
-      <div className="main-content">
+      <div className="favorites-main-content">
         <div className="recipe-container">
           {favoriteRecipes?.map((recipe) => (
             <RecipeCard

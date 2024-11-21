@@ -2,7 +2,7 @@
   min-height: 100vh;
 }
 
-.main-content {
+.my-recipes-main-content {
   margin-top: 22vh;
 }
 
@@ -26,5 +26,11 @@
 @media (max-width: 600px) {
   .recipe-container {
     grid-template-columns: 1fr; /* 1 column on small screens (mobile devices) */
+  }
+}
+
+@media (max-width: 425px) {
+  .my-recipes-main-content {
+    margin-top: 32vh;
   }
 }

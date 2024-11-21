@@ -2,7 +2,7 @@
   min-height: 100vh;
 }
 
-.main-content {
+.create-recipe-main-content {
   margin-top: 19vh;
   font-family: "Anonymous Pro", monospace;
 }
@@ -17,8 +17,8 @@
 }
 
 /* Left and Right sections */
-.left-section,
-.right-section {
+.create-recipe-left-section,
+.create-recipe-right-section {
   flex: 1;
   padding: 1.5rem;
   background-color: #fff;
@@ -74,6 +74,48 @@
 /* Responsive layout: Stack sections on smaller screens */
 @media (max-width: 768px) {
   .content-container {
-    flex-direction: column;
+    flex-direction: column; /* Stack sections vertically */
+    gap: 1.5rem; /* Reduce the gap for better use of space */
+    height: auto; /* Allow sections to grow with content */
+    padding: 1.5rem; /* Adjust padding for smaller screens */
+    width: 100%;
+  }
+
+  .left-section,
+  .right-section {
+    width: 100%; /* Make sections take full width */
+    padding: 1rem; /* Adjust padding for better spacing */
+  }
+
+  .create-recipe-btn {
+    font-size: 1rem; /* Slightly smaller button text */
+    padding: 0.75rem; /* Adjust padding */
+    margin-top: 1rem; /* Reduce margin to fit better */
+  }
+
+  .recipe-image input {
+    width: 80%; /* Full width input for better alignment */
+    padding: 0.5rem; /* Adjust padding for smaller screens */
+  }
+
+  .label-category {
+    font-size: 1rem; /* Slightly reduce label font size */
+  }
+}
+
+/* Further optimization for very small screens (max-width: 480px) */
+@media (max-width: 480px) {
+  .content-container {
+    padding: 1rem; /* Reduce overall padding */
+    gap: 1rem; /* Minimize gap for tight spaces */
+  }
+
+  .label-category {
+    font-size: 0.9rem; /* Reduce font size for labels */
+  }
+
+  .create-recipe-btn {
+    font-size: 0.9rem; /* Smaller button text for smaller screens */
+    padding: 0.5rem; /* Reduce button padding */
   }
 }

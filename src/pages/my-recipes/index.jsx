@@ -71,7 +71,7 @@ export default function MyRecipes() {
     <div className="container">
       <Header />
       <Navbar />
-      <div className="main-content">
+      <div className="my-recipes-main-content">
         <CuisineFilter
           selectedCuisine={selectedCuisine}
           onFilterChange={handleFilterChange}

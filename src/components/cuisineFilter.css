@@ -37,6 +37,83 @@
 
 @media screen and (max-width: 1400px) {
   .cuisine-filter-container {
+    left: 65%;
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .cuisine-filter-container {
     left: 60%;
+    margin-top: -3px;
+  }
+  .cuisine-filter {
+    padding: 0.5rem 2.5rem 0.5rem 0.5rem;
+    font-size: 0.8rem;
+    height: 2.3rem; /* Fixed height */
+    line-height: 2.3rem; /* Align text vertically */
+    width: 8rem;
+  }
+
+  .filter-button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 0rem 1rem;
+    margin: 0 1rem;
+    cursor: pointer;
+    font-size: 0.8rem;
+    height: 2.3rem; /* Fixed height to match dropdown */
+    line-height: 2.3rem; /* Align text vertically */
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .cuisine-filter-container {
+    top: 19vh;
+    left: 25%;
+  }
+  .cuisine-filter {
+    padding: 0.5rem 2.5rem 0.5rem 0.5rem;
+    font-size: 0.8rem;
+    height: 2.2rem; /* Fixed height */
+    line-height: 2.3rem; /* Align text vertically */
+    width: 8rem;
+  }
+  .filter-button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 0rem 1rem;
+    margin: 0 1rem;
+    cursor: pointer;
+    font-size: 0.8rem;
+    height: 2.2rem; /* Fixed height to match dropdown */
+    line-height: 2.3rem; /* Align text vertically */
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .cuisine-filter-container {
+    top: 27vh;
+    left: 50%;
+  }
+
+  .cuisine-filter {
+    padding: 0.5rem 2.5rem 0.5rem 0.5rem;
+    font-size: 0.6rem;
+    height: 2rem; /* Fixed height */
+    line-height: 2rem; /* Align text vertically */
+    width: 6.5rem;
+  }
+  .filter-button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 0rem 1rem;
+    margin: 0 1rem;
+    cursor: pointer;
+    font-size: 0.8rem;
+    height: 2rem; /* Fixed height to match dropdown */
+    line-height: 2rem; /* Align text vertically */
   }
 }

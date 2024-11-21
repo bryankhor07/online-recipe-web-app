@@ -45,3 +45,39 @@ li:hover {
 .favorites-link-active {
   background-color: #84af64;
 }
+
+@media screen and (max-width: 1150px) {
+  nav {
+    padding: 0.5rem 0.5rem; /* Adjust padding */
+  }
+
+  ul {
+    gap: 0.5rem; /* Adjust spacing */
+  }
+
+  li {
+    font-size: 18px; /* Adjust size */
+    padding: 0.87rem 0.25rem; /* Adjust padding */
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  nav {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  nav {
+    margin-top: 8.5vh;
+    height: 3vh;
+  }
+  ul {
+    gap: 0.25rem; /* Adjust spacing */
+  }
+  li {
+    font-size: 10px;
+    background-color: none;
+    padding: 0.7rem 0.5rem;
+  }
+}

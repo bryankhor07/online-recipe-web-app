@@ -196,3 +196,51 @@ input:checked + .slider:before {
     opacity: 1;
   }
 }
+
+@media screen and (max-width: 425px) {
+  header {
+    padding: 0.1rem 0; /* Adjust padding */
+  }
+  .header-title {
+    font-size: 0.6rem;
+  }
+  .slogan-container {
+    top: 0.8rem;
+  }
+  .slogan-title {
+    font-size: 0.6rem;
+  }
+  .slogan-icon {
+    margin-top: -10px;
+    font-size: 0.6rem;
+  }
+  .toggle-switch {
+    width: 30px;
+    height: 10px;
+    margin-right: 5rem; /* Adjust spacing from Log Out button */
+  }
+  .toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    font-size: 10px;
+  }
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 10px;
+    width: 10px;
+    left: 1px;
+    bottom: 0px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+  .sun-icon,
+  .moon-icon {
+    font-size: 8px;
+  }
+  .log-out-btn {
+    font-size: 10px;
+  }
+}

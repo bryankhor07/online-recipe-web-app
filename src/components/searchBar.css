@@ -29,6 +29,54 @@
 
 @media screen and (max-width: 1400px) {
   .search-container {
-    left: 80%;
+    left: 88%;
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .search-container {
+    left: 85%;
+  }
+  .search-bar {
+    padding: 0.5rem 2.5rem 0.5rem 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  .search-icon {
+    position: absolute;
+    right: 70px; /* Position close to the input's right edge */
+    top: 50%;
+    transform: translateY(-50%); /* Center vertically */
+    cursor: pointer;
+    color: #333; /* Adjust color as needed */
+    font-size: 0.8rem; /* Adjust size as needed */
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .search-container {
+    top: 19vh;
+    left: 75%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .search-container {
+    top: 14vh;
+    left: 50%;
+  }
+  .search-bar {
+    padding: 0.5rem 2.5rem 0.5rem 0.5rem;
+    font-size: 0.6rem;
+  }
+
+  .search-icon {
+    position: absolute;
+    right: 90px; /* Position close to the input's right edge */
+    top: 50%;
+    transform: translateY(-50%); /* Center vertically */
+    cursor: pointer;
+    color: #333; /* Adjust color as needed */
+    font-size: 0.6rem; /* Adjust size as needed */
   }
 }

@@ -18,7 +18,7 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  margin-top: -17px;
+  margin-top: -15px;
   background-color: #4285f4;
   color: white;
   border: none;
@@ -54,5 +54,15 @@
 @media (max-width: 600px) {
   .recipe-container {
     grid-template-columns: 1fr; /* 1 column on small screens (mobile devices) */
+  }
+}
+
+@media (max-width: 425px) {
+  .surprise-button {
+    margin-top: -55px;
+    font-size: 0.6rem;
+  }
+  .recipes-main-content {
+    margin-top: 32vh;
   }
 }

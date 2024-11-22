@@ -6,6 +6,7 @@ import RecipeCard from "../../components/recipeCard";
 import RecipeModal from "../../components/recipeModal";
 import SearchBar from "../../components/searchBar";
 import CuisineFilter from "../../components/cuisineFilter";
+import Footer from "../../components/footer";
 import "./styles.css";
 
 export default function Recipes() {
@@ -132,6 +133,7 @@ export default function Recipes() {
       {selectedRecipe && (
         <RecipeModal recipe={selectedRecipe} onClose={closeModal} />
       )}
+      <Footer />
     </div>
   );
 }

@@ -1,0 +1,44 @@
+.footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 5px 0;
+  width: 100%;
+  z-index: 100;
+  margin-top: auto;
+}
+
+.quick-links {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  justify-items: center;
+  text-align: center;
+  margin: 20px auto;
+  max-width: 800px;
+}
+
+.quick-links a {
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  width: 100%;
+  text-align: center;
+  display: block; /* Make the link fill the grid cell */
+  transition: background-color 0.3s ease;
+}
+
+.quick-links a:hover {
+  background-color: #898989; /* Optional: Hover effect */
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 600px) {
+  .quick-links {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .quick-links a {
+    padding: 10px 0;
+  }
+}

@@ -5,6 +5,7 @@ import { useGetFavoriteRecipes } from "../../hooks/useGetFavoriteRecipes";
 import { useDeleteFavoriteRecipe } from "../../hooks/useDeleteFavoriteRecipe";
 import RecipeCard from "../../components/recipeCard";
 import RecipeModal from "../../components/recipeModal";
+import Footer from "../../components/footer";
 import "./styles.css";
 
 export default function Favorites() {
@@ -54,6 +55,7 @@ export default function Favorites() {
           removeFromFavorites={removeFromFavorites}
         />
       )}
+      <Footer />
     </div>
   );
 }

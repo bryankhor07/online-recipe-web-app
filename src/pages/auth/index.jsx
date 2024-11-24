@@ -1,13 +1,15 @@
 import { auth, provider } from "../../config/firebase";
 import { signInWithPopup } from "firebase/auth";
 import { useNavigate, Navigate } from "react-router-dom";
-import { useGetUserInfo } from "../../hooks/useGetUserInfo";
+import { useGetCurrentUserInfo } from "../../hooks/useGetCurrentUserInfo";
+import { useAddUserInfo } from "../../hooks/useAddUserInfo";
 import GoogleIcon from "./google-icon.webp";
 import "./styles.css";
 
 export default function Auth() {
   const navigate = useNavigate();
-  const { isUserAuthenticated } = useGetUserInfo();
+  const { isUserAuthenticated } = useGetCurrentUserInfo();
+  const { addUserInfo } = useAddUserInfo();
 
   const signInWithGoogle = async () => {
     try {
@@ -19,6 +21,12 @@ export default function Auth() {
         isUserAuthenticated: true,
       };
       localStorage.setItem("auth", JSON.stringify(authInfo));
+      // Add user to the users collection if they don't already exist
+      addUserInfo({
+        userID: results.user.uid,
+        name: results.user.displayName,
+        profilePhoto: results.user.photoURL,
+      });
       navigate("/recipes");
     } catch (error) {
       console.error(error);

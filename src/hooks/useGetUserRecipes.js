@@ -7,15 +7,12 @@ import {
   orderBy,
   onSnapshot,
 } from "firebase/firestore";
-import { useGetUserInfo } from "./useGetUserInfo";
 
-export const useGetUserRecipes = () => {
+export const useGetUserRecipes = (userID) => {
   const [recipes, setRecipes] = useState([]);
-  const { userID } = useGetUserInfo();
   const recipeCollectionRef = collection(db, "recipes");
 
   useEffect(() => {
-    if (!userID) return; // Exit if userID is undefined or null
     let unsubscribe;
     try {
       const recipesQuery = query(

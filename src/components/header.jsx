@@ -1,6 +1,7 @@
 import "./header.css";
 import { auth } from "../config/firebase";
 import { signOut } from "firebase/auth";
+import { useGetCurrentUserInfo } from "../hooks/useGetCurrentUserInfo";
 import { useGetUserInfo } from "../hooks/useGetUserInfo";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
@@ -11,7 +12,8 @@ export default function Header() {
     return localStorage.getItem("darkMode") === "true";
   });
   const [notification, setNotification] = useState("");
-  const { name } = useGetUserInfo();
+  const { userID, name } = useGetCurrentUserInfo();
+  const { userInfo } = useGetUserInfo(userID);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -59,6 +61,10 @@ export default function Header() {
     document.body.classList.toggle("dark-mode", newMode);
   };
 
+  const redirectToProfilePage = () => {
+    navigate(`/profile/${userID}`);
+  };
+
   return (
     <header>
       {notification && <div className="notification">{notification}</div>}
@@ -82,9 +88,19 @@ export default function Header() {
             <i className="fas fa-moon moon-icon"></i>
           </span>
         </label>
-        <button className="log-out-btn" onClick={handleLogOut}>
-          Log Out
-        </button>
+        <div className="profile-container">
+          {userInfo[0] ? (
+            <img
+              src={userInfo[0].profilePhoto}
+              alt="Profile Pic"
+              className="profile-photo"
+              onClick={redirectToProfilePage}
+            />
+          ) : null}
+          <button className="log-out-btn" onClick={handleLogOut}>
+            Log Out
+          </button>
+        </div>
       </div>
     </header>
   );

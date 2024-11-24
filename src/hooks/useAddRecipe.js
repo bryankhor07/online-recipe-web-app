@@ -5,11 +5,11 @@ import {
   serverTimestamp,
 } from "firebase/firestore";
 import { db } from "../config/firebase";
-import { useGetUserInfo } from "./useGetUserInfo";
+import { useGetCurrentUserInfo } from "./useGetCurrentUserInfo";
 
 export const useAddRecipe = () => {
   const recipeCollectionRef = collection(db, "recipes"); // Reference to the transactions collection
-  const { userID } = useGetUserInfo();
+  const { userID } = useGetCurrentUserInfo();
 
   const addRecipe = async ({
     author,

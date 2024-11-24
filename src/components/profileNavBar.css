@@ -1,0 +1,66 @@
+.profile-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #d7ffb9;
+  color: black;
+  padding: 2rem; /* Adds padding on the sides */
+  height: 5vh;
+  display: flex;
+  justify-content: space-between; /* Separates <ul> and input */
+  align-items: center;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  z-index: 998;
+  box-sizing: border-box;
+}
+
+.back-btn-img {
+  width: 100%;
+  height: 100%;
+}
+
+.back-btn {
+  width: 40px;
+  height: 40px;
+  padding: 0%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-right: 6rem;
+}
+
+.back-btn:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.profile-title {
+  color: #d00000;
+  font-family: "Kavoon", sans-serif;
+  font-weight: 400;
+}
+
+.save-changes-btn {
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 10px 10px;
+  transition: background-color 0.3s ease;
+  width: 140px;
+  height: 40px;
+}
+
+.save-changes-btn:hover {
+  background: #7b2cbf;
+}
+
+.save-changes-placeholder {
+  width: 140px;
+  height: 40px;
+}

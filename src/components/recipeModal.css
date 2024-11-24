@@ -73,7 +73,15 @@
   text-align: center;
 }
 
-.creadtedAt {
+.author {
+  cursor: pointer;
+}
+
+.author:hover {
+  text-decoration: underline;
+}
+
+.createdAt {
   margin-top: 0;
 }
 

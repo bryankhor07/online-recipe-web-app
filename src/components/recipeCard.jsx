@@ -14,7 +14,6 @@ export default function RecipeCard({ recipe, onClick, isFavoritePage }) {
 
   const calculateAverageRating = () => {
     // Ensure no division by zero occurs
-    console.log(recipe.recipeID);
     return recipe.numberOfRatings > 0
       ? Math.round(recipe.totalRatings / recipe.numberOfRatings)
       : 0;

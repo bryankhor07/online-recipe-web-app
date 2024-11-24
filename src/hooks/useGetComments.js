@@ -7,11 +7,11 @@ import {
   orderBy,
   onSnapshot,
 } from "firebase/firestore";
-import { useGetUserInfo } from "./useGetUserInfo";
+import { useGetCurrentUserInfo } from "./useGetCurrentUserInfo";
 
 export const useGetComments = (recipeID) => {
   const [comments, setComments] = useState([]);
-  const { userID } = useGetUserInfo();
+  const { userID } = useGetCurrentUserInfo();
   const commentCollectionRef = collection(db, "comments");
 
   useEffect(() => {

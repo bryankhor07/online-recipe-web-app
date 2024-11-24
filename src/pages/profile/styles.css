@@ -1,0 +1,11 @@
+.profile-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  font-family: "Anonymous Pro", monospace;
+}
+
+.user-recipes-title {
+  text-align: center;
+}

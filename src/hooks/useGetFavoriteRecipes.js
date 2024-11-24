@@ -7,11 +7,11 @@ import {
   orderBy,
   onSnapshot,
 } from "firebase/firestore";
-import { useGetUserInfo } from "./useGetUserInfo";
+import { useGetCurrentUserInfo } from "./useGetCurrentUserInfo";
 
 export const useGetFavoriteRecipes = () => {
   const [favoriteRecipes, setFavoriteRecipes] = useState([]);
-  const { userID } = useGetUserInfo();
+  const { userID } = useGetCurrentUserInfo();
   const favoriteCollectionRef = collection(db, "favorites");
 
   useEffect(() => {

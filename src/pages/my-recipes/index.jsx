@@ -2,6 +2,7 @@ import Header from "../../components/header";
 import Navbar from "../../components/navbar";
 import { useState, useEffect } from "react";
 import { useGetUserRecipes } from "../../hooks/useGetUserRecipes";
+import { useGetCurrentUserInfo } from "../../hooks/useGetCurrentUserInfo";
 import RecipeCard from "../../components/recipeCard";
 import RecipeModal from "../../components/recipeModal";
 import SearchBar from "../../components/searchBar";
@@ -10,7 +11,8 @@ import Footer from "../../components/footer";
 import "./styles.css";
 
 export default function MyRecipes() {
-  const { recipes } = useGetUserRecipes(); // Update useGetUserRecipes to return setRecipes if needed
+  const { userID } = useGetCurrentUserInfo();
+  const { recipes } = useGetUserRecipes(userID); // Update useGetUserRecipes to return setRecipes if needed
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedRecipe, setSelectedRecipe] = useState(null);
   const [filteredRecipes, setFilteredRecipes] = useState([]);

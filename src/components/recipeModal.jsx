@@ -1,13 +1,14 @@
 import "./recipeModal.css";
 import { useAddToFavorites } from "../hooks/useAddToFavorites";
 import { useAddComment } from "../hooks/useAddComment";
-import { useGetUserInfo } from "../hooks/useGetUserInfo";
+import { useGetCurrentUserInfo } from "../hooks/useGetCurrentUserInfo";
 import { useGetComments } from "../hooks/useGetComments";
 import { useDeleteComment } from "../hooks/useDeleteComment";
 import { useDeleteRecipe } from "../hooks/useDeleteRecipe";
 import { useUpdateRating } from "../hooks/useUpdateRating";
 import StarRating from "./starRating";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function RecipeModal({
   recipe,
@@ -31,8 +32,9 @@ export default function RecipeModal({
   const { deleteRecipe } = useDeleteRecipe();
   const { updateRating } = useUpdateRating();
   const [commentText, setCommentText] = useState("");
-  const { name, profilePhoto, userID } = useGetUserInfo();
+  const { name, profilePhoto, userID } = useGetCurrentUserInfo();
   const { comments } = useGetComments(recipe.recipeID);
+  const navigate = useNavigate();
 
   const handleAddToFavorites = () => {
     addToFavorites({
@@ -96,6 +98,11 @@ export default function RecipeModal({
     // Implement the logic to save the rating to your backend
   };
 
+  const redirectToProfilePage = () => {
+    onClose();
+    navigate(`/profile/${recipe.userID}`);
+  };
+
   return (
     <div className="recipe-modal">
       <div className="modal-content">
@@ -105,7 +112,13 @@ export default function RecipeModal({
         <div className="top-section">
           <div className="left-section">
             <h1>{recipe.recipeName}</h1>
-            <p className="author">By {recipe.author}</p>
+            <p
+              className="author"
+              onClick={redirectToProfilePage}
+              title="Visit author's profile"
+            >
+              By {recipe.author}
+            </p>
             <p className="createdAt">
               {convertTime(
                 recipe.createdAt.seconds,

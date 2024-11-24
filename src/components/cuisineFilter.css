@@ -18,6 +18,7 @@
   overflow-y: auto;
   height: 2.3rem; /* Fixed height */
   line-height: 2.3rem; /* Align text vertically */
+  font-family: "Anonymous Pro", monospace;
   width: 9rem;
 }
 
@@ -31,6 +32,7 @@
   cursor: pointer;
   font-size: 1rem;
   font-weight: bold;
+  font-family: "Anonymous Pro", monospace;
   height: 2.3rem; /* Fixed height to match dropdown */
   line-height: 2.3rem; /* Align text vertically */
 }
@@ -115,5 +117,26 @@
     font-size: 0.8rem;
     height: 2rem; /* Fixed height to match dropdown */
     line-height: 2rem; /* Align text vertically */
+  }
+}
+
+@media screen and (max-height: 595px) {
+  .cuisine-filter {
+    padding: 0.5rem 2.5rem 0.5rem 0.5rem;
+    font-size: 0.6rem;
+    height: 2.1rem; /* Fixed height */
+    line-height: 2.1rem; /* Align text vertically */
+    width: 7rem;
+  }
+  .filter-button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 0rem 1rem;
+    margin: 0 1rem;
+    cursor: pointer;
+    font-size: 0.6rem;
+    height: 2.1rem; /* Fixed height to match dropdown */
+    line-height: 2.1rem; /* Align text vertically */
   }
 }

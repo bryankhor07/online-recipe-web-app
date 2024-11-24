@@ -17,10 +17,11 @@ header {
   background-color: #d7ffb9;
   color: black;
   padding: 1rem 0; /* Keeps padding consistent */
-  height: 8vh;
+  height: 7.6vh;
   display: flex;
   justify-content: center; /* Centers title-container */
   align-items: center;
+  border-bottom: 1px solid #000;
   z-index: 1000;
 }
 
@@ -70,7 +71,7 @@ header {
   display: inline-block;
   width: 40px;
   height: 20px;
-  margin-right: 8rem; /* Adjust spacing from Log Out button */
+  margin-right: 3rem; /* Adjust spacing from Log Out button */
 }
 
 /* Hide the default checkbox */
@@ -141,19 +142,45 @@ input:checked + .slider:before {
   transform: translateX(20px); /* Moves the slider thumb */
 }
 
+.profile-container {
+  position: relative; /* For positioning the button relative to this container */
+  display: inline-block; /* Keeps profile pic and button together */
+  margin-right: 2.5rem;
+}
+
+.profile-photo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
 .log-out-btn {
   position: absolute;
-  right: 1rem; /* Adjusts distance from right edge */
-  background: none;
+  top: 40px; /* Adjust to place below the profile photo */
+  left: 50%; /* Center align horizontally */
+  transform: translateX(
+    -50%
+  ); /* Align button horizontally with the profile photo */
+  background-color: white;
   font-family: "Anonymous Pro", monospace;
   font-size: 20px;
   border: none;
   cursor: pointer;
+  width: 7rem;
+  opacity: 0; /* Initially hidden */
+  pointer-events: none; /* Disable interaction when hidden */
+  transition: opacity 1s ease-out; /* Smooth fade-in/out */
 }
 
 .log-out-btn:hover {
   color: #d00000;
   text-decoration: underline;
+}
+
+.profile-container:hover .log-out-btn {
+  opacity: 1; /* Make button visible on hover */
+  pointer-events: auto; /* Enable interaction */
 }
 
 .notification {

@@ -10,8 +10,6 @@ export const useAddToFavorites = () => {
     recipeDescription,
     totalTime,
     yieldAmount,
-    totalRatings,
-    numberOfRatings,
     ingredients,
     instructions,
     recipeImageURL,

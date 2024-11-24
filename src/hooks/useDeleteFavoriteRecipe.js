@@ -6,13 +6,13 @@ import {
   where,
   getDocs,
 } from "firebase/firestore";
-import { useGetUserInfo } from "./useGetUserInfo";
+import { useGetCurrentUserInfo } from "./useGetCurrentUserInfo";
 
 export const useDeleteFavoriteRecipe = () => {
   // Create a reference to the transactions collection
   const favoriteCollectionRef = collection(db, "favorites");
   // Current user's userID
-  const { userID } = useGetUserInfo();
+  const { userID } = useGetCurrentUserInfo();
 
   const deleteFavoriteRecipe = async (recipeID) => {
     try {

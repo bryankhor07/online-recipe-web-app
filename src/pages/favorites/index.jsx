@@ -3,6 +3,8 @@ import Navbar from "../../components/navbar";
 import { useState } from "react";
 import { useGetFavoriteRecipes } from "../../hooks/useGetFavoriteRecipes";
 import { useDeleteFavoriteRecipe } from "../../hooks/useDeleteFavoriteRecipe";
+import { useGetCurrentUserInfo } from "../../hooks/useGetCurrentUserInfo";
+import { Navigate } from "react-router-dom";
 import RecipeCard from "../../components/recipeCard";
 import RecipeModal from "../../components/recipeModal";
 import Footer from "../../components/footer";
@@ -12,6 +14,7 @@ export default function Favorites() {
   const { favoriteRecipes, setFavoriteRecipes } = useGetFavoriteRecipes(); // Update useGetUserRecipes to return setRecipes if needed
   const [selectedRecipe, setSelectedRecipe] = useState(null);
   const { deleteFavoriteRecipe } = useDeleteFavoriteRecipe();
+  const { isAuth } = useGetCurrentUserInfo();
 
   const handleRecipeClick = (recipe) => {
     setSelectedRecipe(recipe); // Set the clicked recipe as the selected recipe
@@ -31,6 +34,11 @@ export default function Favorites() {
       console.error("Failed to remove recipe from favorites: ", error);
     }
   };
+
+  if (!isAuth) {
+    return <Navigate to="/" />;
+  }
+
   return (
     <div className="container">
       <Header />

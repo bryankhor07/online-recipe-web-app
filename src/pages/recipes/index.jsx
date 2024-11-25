@@ -2,6 +2,8 @@ import Header from "../../components/header";
 import Navbar from "../../components/navbar";
 import { useState, useEffect } from "react";
 import { useGetAllRecipes } from "../../hooks/useGetAllRecipes";
+import { useGetCurrentUserInfo } from "../../hooks/useGetCurrentUserInfo";
+import { Navigate } from "react-router-dom";
 import RecipeCard from "../../components/recipeCard";
 import RecipeModal from "../../components/recipeModal";
 import SearchBar from "../../components/searchBar";
@@ -20,6 +22,7 @@ export default function Recipes() {
   const [activeSearchQuery, setActiveSearchQuery] = useState("");
   const [isSurprise, setIsSurprise] = useState(false);
   const [randomRecipe, setRandomRecipe] = useState([]);
+  const { isAuth } = useGetCurrentUserInfo();
 
   const handleRecipeClick = (recipe) => {
     setSelectedRecipe(recipe); // Set the clicked recipe as the selected recipe
@@ -81,6 +84,10 @@ export default function Recipes() {
       setIsSurprise(true);
     }
   };
+
+  if (!isAuth) {
+    return <Navigate to="/" />;
+  }
 
   return (
     <div className="container">

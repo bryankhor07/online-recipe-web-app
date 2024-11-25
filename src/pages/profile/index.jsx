@@ -1,7 +1,8 @@
 import { useGetUserInfo } from "../../hooks/useGetUserInfo";
+import { useGetCurrentUserInfo } from "../../hooks/useGetCurrentUserInfo";
 import { useGetUserRecipes } from "../../hooks/useGetUserRecipes";
 import { useUpdateUserProfile } from "../../hooks/useUpdateUserProfile";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Navigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import ProfileNavBar from "../../components/profileNavBar";
 import ProfileInfo from "../../components/profileInfo";
@@ -15,6 +16,7 @@ export default function Profile() {
   const { recipes } = useGetUserRecipes(userID);
   const { updateUserProfile } = useUpdateUserProfile();
   const [editProfile, setEditProfile] = useState(false);
+  const { isAuth } = useGetCurrentUserInfo();
   const navigate = useNavigate();
 
   // Default state with empty values
@@ -66,6 +68,10 @@ export default function Profile() {
   const closeModal = () => {
     setSelectedRecipe(null); // Clear the selected recipe to close the modal
   };
+
+  if (!isAuth) {
+    return <Navigate to="/" />;
+  }
 
   return (
     <div className="profile-page">

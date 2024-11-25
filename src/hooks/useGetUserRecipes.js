@@ -13,7 +13,11 @@ export const useGetUserRecipes = (userID) => {
   const recipeCollectionRef = collection(db, "recipes");
 
   useEffect(() => {
-    let unsubscribe;
+    if (!userID) {
+      setRecipes([]); // Clear recipes if no userID is provided
+      return () => {}; // Return a no-op cleanup function
+    }
+    let unsubscribe = () => {}; // Initialize with a no-op function
     try {
       const recipesQuery = query(
         recipeCollectionRef,

@@ -1,6 +1,8 @@
 import Header from "../../components/header";
 import Navbar from "../../components/navbar";
 import { useAddRecipe } from "../../hooks/useAddRecipe";
+import { useGetCurrentUserInfo } from "../../hooks/useGetCurrentUserInfo";
+import { Navigate } from "react-router-dom";
 import RecipeInformation from "../../components/recipeInformation";
 import Ingredients from "../../components/ingredients";
 import Instructions from "../../components/instructions";
@@ -8,6 +10,7 @@ import { useState } from "react";
 import "./styles.css";
 
 export default function CreateRecipe() {
+  const { isAuth } = useGetCurrentUserInfo();
   const [author, setAuthor] = useState("");
   const [recipeName, setRecipeName] = useState("");
   const [recipeDescription, setRecipeDescription] = useState("");
@@ -81,6 +84,10 @@ export default function CreateRecipe() {
     setInstructions([{ step: "", instruction: "" }]);
     setRecipeImageURL("");
   };
+
+  if (!isAuth) {
+    return <Navigate to="/" />;
+  }
 
   return (
     <div className="container">

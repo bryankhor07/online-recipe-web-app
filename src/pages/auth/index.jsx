@@ -8,7 +8,7 @@ import "./styles.css";
 
 export default function Auth() {
   const navigate = useNavigate();
-  const { isUserAuthenticated } = useGetCurrentUserInfo();
+  const { isAuth } = useGetCurrentUserInfo();
   const { addUserInfo } = useAddUserInfo();
 
   const signInWithGoogle = async () => {
@@ -33,7 +33,7 @@ export default function Auth() {
     }
   };
 
-  if (isUserAuthenticated) {
+  if (isAuth) {
     return <Navigate to="/recipes" />;
   }
 

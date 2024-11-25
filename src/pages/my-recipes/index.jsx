@@ -7,6 +7,7 @@ import RecipeCard from "../../components/recipeCard";
 import RecipeModal from "../../components/recipeModal";
 import SearchBar from "../../components/searchBar";
 import CuisineFilter from "../../components/cuisineFilter";
+import ChefQuotes from "../../components/chefQuotes";
 import Footer from "../../components/footer";
 import "./styles.css";
 
@@ -99,6 +100,7 @@ export default function MyRecipes() {
       {selectedRecipe && (
         <RecipeModal recipe={selectedRecipe} onClose={closeModal} />
       )}
+      <ChefQuotes />
       <Footer />
     </div>
   );

@@ -1,0 +1,23 @@
+.chef-quotes {
+  margin: 5rem;
+  padding-bottom: 2rem;
+  font-family: Arial, sans-serif;
+  border: 2rem solid #d00000;
+}
+
+.chef-quotes-title {
+  color: #d00000;
+  font-family: "Kavoon", sans-serif;
+  font-weight: 400;
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.chef-quotes-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}

@@ -7,7 +7,11 @@ export default function ProfileNavBar(props) {
 
   return (
     <div className="profile-navbar">
-      <button className="back-btn" onClick={props.goBack}>
+      <button
+        className="back-btn"
+        onClick={props.goBack}
+        title="Return to Previous Page"
+      >
         <img src={BackButtonImg} alt="Back Button" className="back-btn-img" />
       </button>
       <h1 className="profile-title">{props.profileInfoData.name}'s Profile</h1>

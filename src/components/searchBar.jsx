@@ -15,7 +15,11 @@ const SearchBar = ({ searchQuery, setSearchQuery, onSearch }) => {
           }
         }}
       />
-      <i className="fas fa-search search-icon" onClick={onSearch}></i>
+      <i
+        className="fas fa-search search-icon"
+        onClick={onSearch}
+        title="Search"
+      ></i>
     </div>
   );
 };

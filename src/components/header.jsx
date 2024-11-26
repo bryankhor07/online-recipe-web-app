@@ -83,7 +83,7 @@ export default function Header() {
             onChange={toggleDarkMode}
             aria-label="Toggle dark mode"
           />
-          <span className="slider">
+          <span className="slider" title="Toggle dark mode">
             <i className="fas fa-sun sun-icon"></i>
             <i className="fas fa-moon moon-icon"></i>
           </span>
@@ -95,6 +95,7 @@ export default function Header() {
               alt="Profile Pic"
               className="profile-photo"
               onClick={redirectToProfilePage}
+              title="Profile"
             />
           ) : null}
           <button className="log-out-btn" onClick={handleLogOut}>

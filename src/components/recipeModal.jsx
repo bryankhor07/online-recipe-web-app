@@ -106,7 +106,7 @@ export default function RecipeModal({
   return (
     <div className="recipe-modal">
       <div className="modal-content">
-        <span className="close" onClick={onClose}>
+        <span className="close" onClick={onClose} title="Close">
           &times;
         </span>
         <div className="top-section">
@@ -219,6 +219,7 @@ export default function RecipeModal({
                       <i
                         className="fas fa-trash trash-icon"
                         onClick={() => deleteComment(comment.commentID)}
+                        title="Delete comment"
                       ></i>
                     )}
                   </div>
